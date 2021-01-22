@@ -1,7 +1,34 @@
+/*Global*/
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body{
     background: #333;
     color: #fff;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container{
+    width: 300px;
+    margin: auto;
+}
+
+/*Header*/
+header{
+    background: #07925d;
+    padding: 2rem 0 10rem;
+    text-align: center;
+}
+
+#logo{
+    font-weight: 100;
+}
+
+/*Footer*/
+
+footer{
+    text-align: center;
 }
