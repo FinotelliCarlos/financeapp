@@ -1,4 +1,7 @@
 /*Global*/
+:root {
+    --Dark-Blue: #1f4a6d;
+}
 *{
     margin: 0;
     padding: 0;
@@ -7,13 +10,22 @@
 
 body{
     background: #333;
-    color: #fff;
     font-family: 'Poppins', sans-serif;
+    color: #fff;
 }
 
 .container{
-    width: 300px;
+    width: min(90vw, 800px);
+    /*Argumento ou função que diz "aplique o menor" assim que 90vw é o menor em mobile first e 800px maior e será aplicado assim que a tela e expandida*/
     margin: auto;
+}
+
+/*Titles*/
+h2{
+    margin-top: 3.2rem;
+    margin-bottom: 0.8rem;
+    font-weight: 400;
+    font-size: 1.8rem;
 }
 
 /*Header*/
@@ -27,8 +39,91 @@ header{
     font-weight: 100;
 }
 
+/*Balance*/
+#balance {
+    margin-top: -8rem;
+}
+
+#balance h2{
+    color: #fff;
+    margin-top: 0;
+}
+
+/*Cards*/
+.card{
+    background: #fff;
+    padding: 1.5rem 2rem;
+    border-radius: .7rem;
+    margin-bottom: 1.5rem;
+    color: var(--Dark-Blue);
+}
+
+.card h3{
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.card p{
+    font-size: 2rem;
+    line-height: 3rem;
+
+    margin-top: 1.5rem;
+}
+
+.card.total {
+    background: #49aa26;
+    color: #fff;
+}
+
+/*Table*/
+#data-table{
+    width: 100%;
+    border-spacing: 0 0.5rem;
+    color: #969cb3;
+}
+
+table thead tr th:first-child,
+table tbody tr td:first-child{
+    border-radius: 0.3rem 0 0 0.3rem;
+}
+
+table thead th{
+    background: #fff;
+    font-weight: 400;
+    padding: 1rem 2rem;
+    text-align: left;
+    color: var(--Dark-Blue);
+}
+
+table tbody tr{
+    opacity: .7;
+}
+
+table tbody tr:hover{
+    opacity: 1;
+}
+
+table tbody td{
+    background: #fff;
+    padding: 1rem 2rem;
+}
+
+td.description{
+    color: var(--Dark-Blue);
+}
+
+td.income{
+    color: #12a454;
+}
+
+td.expense{
+    color: #e92929;
+}
+
 /*Footer*/
 
 footer{
     text-align: center;
+    padding: 4rem 0 2rem;
+    opacity: .5;
 }
