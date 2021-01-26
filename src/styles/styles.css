@@ -1,6 +1,9 @@
 /*Global*/
 :root {
     --Dark-Blue: #1f4a6d;
+    --green: #268803;
+    --hgreen: #55b333;
+    --red: #e92929;
 }
 *{
     margin: 0;
@@ -54,9 +57,40 @@ a:hover{
     color: #47ff05;
 }
 
+button{
+    width: 100%;
+    height: 50px;
+    border: none;
+    color: #fff;
+    background: var(--green);
+    padding: 0;
+    border-radius: .3rem;
+    cursor: pointer;
+}
+
+button:hover{
+    background: var(--hgreen);
+}
+
 .button.new{
     display: inline-block;
     margin-bottom: .8rem;
+}
+
+.button.cancel{
+    color: var(--red);
+    border: 2px var(--red) solid;
+    border-radius: .3rem;
+    height: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: .6;
+}
+
+.button.cancel:hover{
+    opacity: 1;
 }
 
 /*Header*/
@@ -197,6 +231,39 @@ td.expense{
 }
 
 /* Form */
+#form{
+    max-width: 500px;
+}
+
+#form h2{
+    margin-top: 0;
+}
+
+input{
+    border: none;
+    border-radius: .3rem;
+    padding: 1rem;
+    width: 100%;
+}
+
+.input-group{
+    margin-top: 1rem;
+}
+
+.input-group small{
+    opacity: .4;
+}
+
+.input-group.actions{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-group.actions .button,
+.input-group.actions button{
+    width: 48%;
+}
 
 
 /*Footer*/
