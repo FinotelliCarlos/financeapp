@@ -18,19 +18,19 @@ const transactions = [
     {
         id: 1,
         description: 'Luz',
-        amount: -50000,
+        amount: -28935,
         date: '23/01/2021',
     },
     {
         id: 3,
         description: 'Internet',
-        amount: -20000,
+        amount: -13999,
         date: '23/01/2021',
     },
     {
         id: 2,
         description: 'Salário',
-        amount: 500000,
+        amount: 198015,
         date: '23/01/2021',
     },
 ]
