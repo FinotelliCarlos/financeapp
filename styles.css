@@ -201,6 +201,10 @@ td.expense{
     color: #e92929;
 }
 
+td.removeLink{
+    cursor: pointer;
+}
+
 /*Modal*/
 .modal-overlay{
     width: 100%;

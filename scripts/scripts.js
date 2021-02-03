@@ -44,7 +44,8 @@ const Transaction = {
         App.reload()
     },
     remove(index){
-
+        Transaction.all.splice(index,1)
+        App.reload()
     },
     incomes(){
         let income = 0;
@@ -87,7 +88,7 @@ const DOM = {
             <td class="description">${transaction.description}</td>
             <td class=${CSSclass }>${amount}</td>
             <td class="date">${transaction.date}</td>
-            <td>
+            <td class="removeLink" onclick="Transaction.remove()">
                 <img src="/assets/minus.svg" alt="Remover Transação">
             </td>
         `
@@ -144,3 +145,5 @@ const App = {
 }
 
 App.init()
+
+Transaction.remove(5)
