@@ -16,21 +16,23 @@ const Modal = {
 
 const transactions = [
     {
-        id: 1,
         description: 'Luz',
         amount: -28935,
         date: '23/01/2021',
     },
     {
-        id: 3,
         description: 'Internet',
         amount: -13999,
         date: '23/01/2021',
     },
     {
-        id: 2,
         description: 'Salário',
         amount: 198015,
+        date: '23/01/2021',
+    },
+    {
+        description: 'App',
+        amount: 19088,
         date: '23/01/2021',
     },
 ]
@@ -39,6 +41,10 @@ const Transaction = {
     all: transactions,
     add(transaction){
         Transaction.all.push(transaction)
+        App.reload()
+    },
+    remove(index){
+
     },
     incomes(){
         let income = 0;
@@ -98,6 +104,9 @@ const DOM = {
         document
             .getElementById('totalDisplay')
             .innerHTML = Utils.formatCurrency(Transaction.total())
+    },
+    clearTransactions(){
+        DOM.transactionsContainer.innerHTML = ""
     }
 }
 
@@ -116,10 +125,22 @@ const Utils = {
 
         return signal + value
     }
-} 
+}
 
-transactions.forEach(function (transaction){
-    DOM.addTransaction(transaction)
-})
+const App = {
+    init(){
 
-DOM.updateBalance()
+        Transaction.all.forEach((transaction) => {
+            DOM.addTransaction(transaction)
+        })
+        
+        DOM.updateBalance()
+
+    },
+    reload(){
+        DOM.clearTransactions()
+        App.init()
+    }
+}
+
+App.init()
