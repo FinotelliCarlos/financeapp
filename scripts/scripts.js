@@ -14,31 +14,29 @@ const Modal = {
     }
 }
 
-const transactions = [
-    {
-        description: 'Luz',
-        amount: -28935,
-        date: '23/01/2021',
-    },
-    {
-        description: 'Internet',
-        amount: -13999,
-        date: '23/01/2021',
-    },
-    {
-        description: 'Salário',
-        amount: 198015,
-        date: '23/01/2021',
-    },
-    {
-        description: 'App',
-        amount: 19088,
-        date: '23/01/2021',
-    },
-]
-
 const Transaction = {
-    all: transactions,
+    all: [
+        {
+            description: 'Luz',
+            amount: -28935,
+            date: '23/01/2021',
+        },
+        {
+            description: 'Internet',
+            amount: -13999,
+            date: '23/01/2021',
+        },
+        {
+            description: 'Salário',
+            amount: 198015,
+            date: '23/01/2021',
+        },
+        {
+            description: 'App',
+            amount: 19088,
+            date: '23/01/2021',
+        },
+    ],
     add(transaction){
         Transaction.all.push(transaction)
         App.reload()
