@@ -110,6 +110,15 @@ const DOM = {
 }
 
 const Utils = {
+    formatAmount(value){
+        value = Number(value) * 100
+
+        return value
+    },
+    formatDate(date){
+        const splittedDate = date.split('-')
+        return `${splittedDate[2]}/${splittedDate[1]}/${splittedDate[0]}`
+    },
     formatCurrency(value){
         const signal = Number(value) <0 ? "-" : ""
 
@@ -141,14 +150,36 @@ const Form = {
 
     validateFields(){
         const { description, amount, date } = Form.getValues()
+
+        if( description.trim() === "" || 
+            amount.trim() === "" || 
+            date.trim() === ""){
+                throw new Error("Por Favor, Preencha todos os campos! Não será possivel assumir nova transação com algum campo vazio!")
+        }
+    },
+
+    formatValues(){
+        let { description, amount, date } = Form.getValues()
+        amount = Utils.formatAmount(amount)
+        date = Utils.formatDate(date)
+
+        return {
+            description,
+            amount,
+            date
+        }
     },
 
     submit(event){
         event.preventDefault()
 
-        Form.validateFields()
-
-        Form.formatData()
+        try{
+            Form.validateFields()
+            const transaction = Form.formatValues()
+            Transaction.add(transaction)
+        }catch(error){
+            alert(error.message)
+        }
     }
 }
 
