@@ -100,8 +100,19 @@ header {
   text-align: center;
 }
 
+.hdh1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 400;
+}
+
+.hdh1 img{
+  margin-left: 3px;
+}
+
 #logo {
-  font-weight: 100;
+  width: 100px;
 }
 
 /*Balance*/
