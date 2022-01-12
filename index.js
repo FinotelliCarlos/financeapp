@@ -1,13 +1,14 @@
 const express = require('express');
 const app = express();
 
-app.set('view engine','ejs')
-app.use(express.static('public'));
+app
+    .set('view engine','ejs')
+    .use(express.static('public'))
 
-app.get('/', (req,res) => {
+    .get('/', (req,res) => {
     res.render('index')
-});
+})
 
-app.listen(4000, () => {
+    .listen(process.env.PORT || 4000, () => {
     console.log("App is running!")
-});
+})
